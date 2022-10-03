@@ -13,13 +13,11 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // Initialize a unique ID.
     public Job() {
         id = nextId;
         nextId++;
     }
 
-    // Initialize the id and value fields.
     public Job(String aName, Employer anEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
         this();
         name = aName;
@@ -29,7 +27,6 @@ public class Job {
         coreCompetency = aCoreCompetency;
     }
 
-    // Custom toString method.
     @Override
     public String toString(){
         String output = "";
@@ -58,7 +55,7 @@ public class Job {
         return output;
     }
 
-    // Custom equals and hashCode methods. Two Job objects are "equal" when their id fields match.
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,7 +70,6 @@ public class Job {
     }
 
 
-    // Getters and setters.
 
     public int getId() {
         return id;

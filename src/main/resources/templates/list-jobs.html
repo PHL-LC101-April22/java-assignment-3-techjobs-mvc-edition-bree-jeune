@@ -10,7 +10,33 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
+
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr>
+            <td>ID</td>
+            <td th:text="${job.getId()}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${job.getName()}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${job.getEmployer()}"><a th:href="@{/list/jobs(column=employer,value=${job.getEmployer()})}}"></a></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${job.getLocation()}"><a th:href="@{/list/jobs(column=location,value=${job.getLocation()})}" ></a></td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${job.getPositionType()}"><a th:href="@{/list/jobs(column=positionType,value=${job.getPositionType()})}" ></a></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${job.getCoreCompetency()}"> <a th:href="@{/list/jobs(column=coreCompetency,value=${job.getCoreCompetency()})}"></a></td>
+        </tr>
+    </table>
 
 </div>
 
